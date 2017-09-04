@@ -1,0 +1,18 @@
+language: java
+before_install : 
+ - mkdir ../.zcs-deps
+ - mkdir ../../../.ivy2
+ - cd ../../../.ivy2
+ - mkdir cache
+ - cd /home/travis/build/miteshsavani/zm-selenium
+ - git clone https://github.com/Zimbra/zimbra-package-stub.git ../zimbra-package-stub
+ - git clone https://github.com/Zimbra/zm-mailbox.git ../zm-mailbox
+ - git clone https://github.com/Zimbra/zm-zcs.git ../zm-zcs
+ - git clone https://github.com/Zimbra/zm-web-client.git ../zm-web-client
+ - git clone https://github.com/Zimbra/zm-zimlets.git ../zm-zimlets
+ - cd ../zm-mailbox
+ - ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
+ - 
+ - cd ../zm-selenium
+ - pwd
+script: ant tgz-extract
