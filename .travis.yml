@@ -5,6 +5,7 @@ before_install :
  - cd ../../../.ivy2
  - mkdir cache
  - cd /home/travis/build/miteshsavani/zm-selenium
+ - git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
  - git clone https://github.com/Zimbra/zimbra-package-stub.git ../zimbra-package-stub
  - git clone https://github.com/Zimbra/zm-mailbox.git ../zm-mailbox
  - git clone https://github.com/Zimbra/zm-zcs.git ../zm-zcs
@@ -12,7 +13,6 @@ before_install :
  - git clone https://github.com/Zimbra/zm-zimlets.git ../zm-zimlets
  - cd ../zm-mailbox
  - ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
- - 
  - cd ../zm-selenium
  - pwd
 script: ant tgz-extract
