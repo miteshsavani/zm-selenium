@@ -15,4 +15,7 @@ before_install :
  - ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
  - cd ../zm-selenium
  - pwd
+cache: 
+ directories:
+  - /home/travis/.ivy2/cache
 script: ant tgz-extract
