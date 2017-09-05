@@ -16,3 +16,9 @@ cache:
  directories:
   - /home/travis/.ivy2/cache
 script: ant tgz-extract
+notifications:
+  email:
+    recipients:
+      - mitesh.savani810@gmail.com
+    on_success: always # default: change
+    on_failure: always # default: always
