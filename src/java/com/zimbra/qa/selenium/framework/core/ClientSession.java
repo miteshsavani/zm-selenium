@@ -238,7 +238,12 @@ public class ClientSession {
 			    caps.setCapability("os_version", "7");
 			    caps.setCapability("browserstack.debug", "true");
 
-			    WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
+			     try {
+			    	webDriver = new RemoteWebDriver(new URL(URL), caps);
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 		return webDriver;
