@@ -1,4 +1,7 @@
 language: java
+dist: trusty
+addons:
+  chrome: stable
 before_install : 
  - mkdir ../.zcs-deps
  - cd /home/travis/build/miteshsavani/zm-selenium
@@ -11,7 +14,8 @@ before_install :
  - cd ../zm-mailbox
  - ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
  - cd ../zm-selenium
- - pwd
+ - # start your web application and listen on `localhost`
+ - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 cache: 
  directories:
   - /home/travis/.ivy2/cache
