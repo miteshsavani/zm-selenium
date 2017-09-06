@@ -49,6 +49,7 @@ import com.zimbra.common.util.tar.TarInputStream;
 import com.zimbra.qa.selenium.framework.util.ConfigProperties;
 import com.zimbra.qa.selenium.framework.util.OperatingSystem;
 import java.util.zip.GZIPInputStream;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 /**
