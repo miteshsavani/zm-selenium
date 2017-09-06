@@ -15,7 +15,7 @@ before_install :
 cache: 
  directories:
   - /home/travis/.ivy2/cache
-script: ant tgz-extract
+script: ant Run-ExecuteHarnessMain
 notifications:
   email:
     recipients:
