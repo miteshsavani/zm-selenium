@@ -232,11 +232,12 @@ public class ClientSession {
 			     String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 			DesiredCapabilities caps = new DesiredCapabilities();
-			    caps.setCapability("browser", "Chrome");
-			    caps.setCapability("browser_version", "56");
+			    caps.setCapability("browser", "Firefox");
+			    caps.setCapability("browser_version", "54");
 			    caps.setCapability("os", "Windows");
-			    caps.setCapability("os_version", "7");
+			    caps.setCapability("os_version", "8.1");
 			    caps.setCapability("browserstack.debug", "true");
+			 caps.setCapability("browserstack.local", "true");
 
 			     try {
 			    	webDriver = new RemoteWebDriver(new URL(URL), caps);
