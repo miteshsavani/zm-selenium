@@ -220,12 +220,24 @@ public class ClientSession {
 				options.addArguments("disable-infobars");
 				options.addArguments("start-maximized");
 
-		        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		        /*DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		        System.setProperty("webdriver.chrome.driver", driverFile);
 		        capabilities.setCapability("chrome.switches", Arrays.asList("--disable-extensions"));
 		        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		        capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
-		        webDriver = new ChromeDriver(capabilities);
+		        webDriver = new ChromeDriver(capabilities);*/
+			 	String USERNAME = "miteshsavani1";
+			     String AUTOMATE_KEY = "Jp3Wo9CMsi6koFeQ3pfP";
+			     String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+
+			DesiredCapabilities caps = new DesiredCapabilities();
+			    caps.setCapability("browser", "Chrome");
+			    caps.setCapability("browser_version", "56");
+			    caps.setCapability("os", "Windows");
+			    caps.setCapability("os_version", "7");
+			    caps.setCapability("browserstack.debug", "true");
+
+			    WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 			}
 		}
 		return webDriver;
