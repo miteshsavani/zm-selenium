@@ -6,6 +6,7 @@ addons:
     access_key: "Jp3Wo9CMsi6koFeQ3pfP"
 before_install : 
  - mkdir ../.zcs-deps
+ - pwd
  - cd /home/travis/build/miteshsavani/zm-selenium
  - git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
  - git clone https://github.com/Zimbra/zimbra-package-stub.git ../zimbra-package-stub
