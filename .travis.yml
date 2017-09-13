@@ -2,7 +2,7 @@ language: java
 dist: trusty
 
 before_install:
- - cd /home;
+ - cd /home/travis/build/miteshsavani;
  - wget http://downloads.sourceforge.net/tcl/tcl8.4.18-src.tar.gz;
  - cd tcl8.4.18;
  - cd unix;
