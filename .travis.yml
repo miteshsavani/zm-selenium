@@ -9,19 +9,12 @@ before_install:
  - cd unix;
  - ./configure --prefix=/usr  --enable-threads --mandir=/usr/share/man;
  - make ;
- - sed -i \
-    -e "s@^\(TCL_SRC_DIR='\).*@\1/usr/include'@" \
-    -e "/TCL_B/s@='\(-L\)\?.*unix@='\1/usr/lib@" \
-    -e "/SEARCH/s/=.*/=''/" \
-    tclConfig.sh;
+ - sed -i -e "s@^\(TCL_SRC_DIR='\).*@\1/usr/include'@" -e "/TCL_B/s@='\(-L\)\?.*unix@='\1/usr/lib@" -e "/SEARCH/s/=.*/=''/" tclConfig.sh;
  - cd /tmp;
  - wget  https://sourceforge.net/projects/expect/files/Expect/5.45/expect5.45.tar.gz;
  - tar -xvzf expect5.45.tar.gz;
  - cd expect5.45;
- - ./configure --prefix=/usr \
-            --with-tcl=/usr/lib \
-            --with-tclinclude=/usr/include \
-            --enable-shared ;
+ - ./configure --prefix=/usr --with-tcl=/usr/lib --with-tclinclude=/usr/include --enable-shared ;
  - make;
  - cp /usr/lib/expect5.45libexpect5.45.so /usr/lib/;
 
