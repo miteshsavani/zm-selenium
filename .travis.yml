@@ -3,7 +3,7 @@ dist: trusty
 
 before_install:
  - cd /tmp;
- - wget http://downloads.sourceforge.net/tcl/tcl8.4.18-src.tar.gz /tmp/;
+ - wget http://downloads.sourceforge.net/tcl/tcl8.4.18-src.tar.gz;
  - cd tcl8.4.18;
  - cd unix;
  - ./configure --prefix=/usr  --enable-threads --mandir=/usr/share/man;
