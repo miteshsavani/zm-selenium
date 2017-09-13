@@ -2,7 +2,7 @@ language: java
 dist: trusty
 
 before_install:
- - cd /tmp;
+ - cd /home;
  - wget http://downloads.sourceforge.net/tcl/tcl8.4.18-src.tar.gz;
  - cd tcl8.4.18;
  - cd unix;
