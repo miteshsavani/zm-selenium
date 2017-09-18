@@ -1,6 +1,13 @@
 language: java
 
 before_install : 
+ - mkdir installer-build
+ - cd installer-build
+ - git clone https://github.com/Zimbra/zm-build.git
+ - cd zm-build
+ - git checkout origin/develop
+ - ./build.pl --build-no=1713 --build-ts=`date +'%Y%m%d%H%M%S'`
+ - find -follow
  - hostname
  - mkdir ../.zcs-deps
  - cd /home/travis/build/miteshsavani/zm-selenium
