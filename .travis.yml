@@ -1,5 +1,5 @@
 language: java
-sudo: required
+sudo: false
 dist: precise
 before_install : 
  - sudo apt-get install python-software-properties software-properties-common
