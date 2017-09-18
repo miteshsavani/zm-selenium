@@ -6,7 +6,10 @@ before_install :
  - git clone https://github.com/Zimbra/zm-build.git
  - cd zm-build
  - git checkout origin/develop
- - ./build.pl --build-no=1713 --build-ts=`date +'%Y%m%d%H%M%S'`
+ - ./build.pl --build-no=1713 --build-ts=`date +'%Y%m%d%H%M%S'` \
+  --build-release=JUDASPRIEST --build-release-no=8.7.6 \
+  --build-release-candidate=GA --build-type=FOSS \
+  --build-thirdparty-server=files.zimbra.com --no-interactive
  - find -follow
  - hostname
  - mkdir ../.zcs-deps
