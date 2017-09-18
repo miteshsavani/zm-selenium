@@ -1,6 +1,13 @@
 language: java
-
+sudo: required
+dist: precise
 before_install : 
+ - sudo apt-get install python-software-properties software-properties-common
+ - sudo add-apt-repository ppa:openjdk-r/ppa
+ - sudo apt-get update
+ - sudo update-ca-certificates -f
+ - sudo apt-get install openjdk-8-jdk ant ruby git maven build-essential zlib1g-dev
+ - cd /home/travis/build/miteshsavani
  - mkdir installer-build
  - cd installer-build
  - git clone https://github.com/Zimbra/zm-build.git
