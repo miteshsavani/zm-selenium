@@ -1,5 +1,5 @@
 language: java
-sudo: required
+sudo: false
 dist: trusty
 before_install : 
  - sudo apt-get install software-properties-common 
