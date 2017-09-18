@@ -1,21 +1,21 @@
 language: java
-sudo: false
-dist: trusty
+#sudo: false
+#dist: trusty
 before_install : 
- - sudo apt-get install software-properties-common 
- - sudo add-apt-repository -y ppa:openjdk-r/ppa
- - sudo apt-get update
- - sudo update-ca-certificates -f
- - sudo apt-get install openjdk-8-jdk ant ruby git maven build-essential
- - cd /home/travis/build/miteshsavani
- - mkdir installer-build
- - cd installer-build
- - git clone https://github.com/Zimbra/zm-build.git
- - cd zm-build
- - git checkout origin/develop
- - ./build.pl --build-no=1713 --build-ts=`date +'%Y%m%d%H%M%S'` --build-release=JUDASPRIEST --build-release-no=8.7.6 --build-release-candidate=GA --build-type=FOSS --build-thirdparty-server=files.zimbra.com --no-interactive
- - find -follow
- - hostname
+# - sudo apt-get install software-properties-common 
+# - sudo add-apt-repository -y ppa:openjdk-r/ppa
+# - sudo apt-get update
+# - sudo update-ca-certificates -f
+# - sudo apt-get install openjdk-8-jdk ant ruby git maven build-essential
+# - cd /home/travis/build/miteshsavani
+# - mkdir installer-build
+# - cd installer-build
+# - git clone https://github.com/Zimbra/zm-build.git
+# - cd zm-build
+# - git checkout origin/develop
+# - ./build.pl --build-no=1713 --build-ts=`date +'%Y%m%d%H%M%S'` --build-release=JUDASPRIEST --build-release-no=8.7.6 --build-release-candidate=GA --build-type=FOSS --build-thirdparty-server=files.zimbra.com --no-interactive
+# - find -follow
+# - hostname
  - mkdir ../.zcs-deps
  - cd /home/travis/build/miteshsavani/zm-selenium
  - git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
