@@ -1,6 +1,7 @@
 language: java
 
 before_install : 
+ - hostname
  - mkdir ../.zcs-deps
  - cd /home/travis/build/miteshsavani/zm-selenium
  - git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
