@@ -9,7 +9,6 @@ jobs:
        - run: mkdir ../.zcs-deps
        - run: echo download zm-ajax from github
        - run: git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
-       - run:
-         command: |
+       - run: |
             echo Running test
             mkdir -p /tmp/test-results
