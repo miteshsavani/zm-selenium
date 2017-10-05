@@ -2,7 +2,7 @@ version: 2
 jobs:
    build:
      docker:
-       - image: circleci/openjdk:latest-browsers
+       - image: zimbra/zcs-foss
      steps:
        - checkout
        - run: echo "hello world"
@@ -23,7 +23,7 @@ jobs:
             git clone https://github.com/Zimbra/zm-zimlets.git ../zm-zimlets
             cd ../zm-mailbox
             ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
-            cd ../zm-selenium
+            cd ~/zm-selenium
             ant Run-ExecuteHarnessMain
             - save_cache:
                  key: v1-myapp-cache
