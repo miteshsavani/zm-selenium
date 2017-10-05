@@ -1,11 +1,11 @@
 version: 2
 jobs:
    build:
+     dependencies:
+        pre:
+          - sudo apt-get git; sudo apt-get install wget
      docker:
        - image: zimbra/zcs-foss
-    dependencies:
-       pre:
-          - sudo apt-get git; sudo apt-get install wget
      steps:
        - checkout
        - run: echo "hello world"
