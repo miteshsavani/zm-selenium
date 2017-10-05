@@ -8,6 +8,7 @@ jobs:
        - run: echo "hello world"
        - run: |
             mkdir ../.zcs-deps
+            mkdir ../.ivy2/cache
             echo download zm-ajax from github
             git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
             git clone https://github.com/Zimbra/zimbra-package-stub.git ../zimbra-package-stub
