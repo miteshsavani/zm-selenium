@@ -4,7 +4,7 @@ jobs:
      docker:
        - image: zimbra/zcs-foss
      steps:
-       - run: sudo apt-get -y install git; sudo apt-get -y install wget; sudo apt-get -y install ant
+       - run: sudo apt-get -y install git; sudo apt-get -y install wget; sudo apt-get -y install ant; sudo apt-get update
        - checkout
        - run: echo "hello world"
        - run: |
