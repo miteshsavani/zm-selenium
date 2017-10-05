@@ -4,8 +4,6 @@ jobs:
     
     working_directory: ~/mitesh-demo
 
-    docker:
-      - image: circleci/ubuntu-14.04-XXL-1239-04cfc8d
 
     steps:
 
