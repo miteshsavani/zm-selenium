@@ -7,3 +7,7 @@ jobs:
        - checkout
        - run: echo "hello world"
        - run: mkdir ../.zcs-deps
+       - run :
+           command: |
+           echo download zm-ajax from github
+           git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
