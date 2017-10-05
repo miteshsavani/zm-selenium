@@ -4,6 +4,8 @@ jobs:
     
     working_directory: ~/mitesh-demo
 
+docker:
+      - image: circleci/openjdk:8-jdk-browsers
 
     steps:
 
