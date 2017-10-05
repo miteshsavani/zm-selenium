@@ -10,7 +10,7 @@ jobs:
             mkdir ../.zcs-deps
             cd ../.zcs-deps
             wget http://www.java2s.com/Code/JarDownload/ant-contrib/ant-contrib-1.0b1.jar.zip
-            tar -xvzf ant-contrib-1.0b1.jar.zip
+            unzip -a ant-contrib-1.0b1.jar.zip
             mkdir ../.ivy2
             cd ../.ivy2
             mkdir cache
