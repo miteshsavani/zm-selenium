@@ -7,6 +7,9 @@ jobs:
        - checkout
        - run: echo "hello world"
        - run: |
+            apt-get install git
+            apt-get install wget
+            apt-get install ant
             mkdir ../.zcs-deps
             cd ../.zcs-deps
             wget http://www.java2s.com/Code/JarDownload/ant-contrib/ant-contrib-1.0b1.jar.zip
