@@ -6,9 +6,14 @@ jobs:
      steps:
        - checkout
        - run: echo "hello world"
-       - run: mkdir ../.zcs-deps
-       - run: echo download zm-ajax from github
-       - run: git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
        - run: |
-            echo Running test
-            mkdir -p /tmp/test-results
+			mkdir ../.zcs-deps
+			echo download zm-ajax from github
+			git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
+			git clone https://github.com/Zimbra/zimbra-package-stub.git ../zimbra-package-stub
+			git clone https://github.com/Zimbra/zm-mailbox.git ../zm-mailbox
+			git clone https://github.com/Zimbra/zm-zcs.git ../zm-zcs
+			git clone https://github.com/Zimbra/zm-web-client.git ../zm-web-client
+			git clone https://github.com/Zimbra/zm-zimlets.git ../zm-zimlets
+			cd ../zm-mailbox
+			ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
