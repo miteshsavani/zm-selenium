@@ -31,4 +31,5 @@ jobs:
                  paths:
                         - ~/zm-ajax
                         - ~/zm-mailbox
+                        - ~/.zcs-deps
             
