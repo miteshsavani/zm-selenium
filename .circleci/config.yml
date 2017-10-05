@@ -8,14 +8,6 @@ docker:
       - image: circleci/openjdk:8-jdk-browsers
 
     steps:
-
-   
-      - mkdir ../.zcs-deps
-      - git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
-      - git clone https://github.com/Zimbra/zimbra-package-stub.git ../zimbra-package-stub
-      - git clone https://github.com/Zimbra/zm-mailbox.git ../zm-mailbox
-      - git clone https://github.com/Zimbra/zm-zcs.git ../zm-zcs
-      - git clone https://github.com/Zimbra/zm-web-client.git ../zm-web-client
-      - git clone https://github.com/Zimbra/zm-zimlets.git ../zm-zimlets
-      - cd ../zm-mailbox
-      - cd ../zm-selenium
+       - checkout
+       - run: mkdir ../.zcs-deps
+       - run: echo "hello world"
