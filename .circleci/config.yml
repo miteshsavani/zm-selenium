@@ -9,7 +9,7 @@ jobs:
 
     steps:
 
-      - pwd
+   
       - mkdir ../.zcs-deps
       - git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
       - git clone https://github.com/Zimbra/zimbra-package-stub.git ../zimbra-package-stub
