@@ -23,7 +23,6 @@ jobs:
             git clone https://github.com/Zimbra/zm-zimlets.git ../zm-zimlets
             cd ../zm-mailbox
             ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
-            git clone https://github.com/miteshsavani/zm-selenium.git ../zm-selenium
             cd ../zm-selenium
             ant Run-ExecuteHarnessMain
             - save_cache:
