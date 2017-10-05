@@ -26,4 +26,9 @@ jobs:
             git clone https://github.com/miteshsavani/zm-selenium.git ../zm-selenium
             cd ../zm-selenium
             ant Run-ExecuteHarnessMain
+            - save_cache:
+                 key: v1-myapp-cache
+                 paths:
+                        - ~/zm-ajax
+                        - ~/zm-mailbox
             
