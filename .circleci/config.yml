@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
-docker:
+    docker:
       - image: circleci/openjdk:8-jdk-browsers
-    steps:
+     steps:
        - checkout
        - run: mkdir ../.zcs-deps
        - run: echo "hello world"
