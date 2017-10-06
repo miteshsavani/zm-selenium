@@ -25,10 +25,10 @@ jobs:
             cd ../zm-mailbox
             ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
             git clone https://github.com/miteshsavani/zm-selenium.git ../zm-selenium
-        - run: |
+       - run: |
             cd ../zm-selenium
             su - zimbra -c "zmprov cd testdomain.com"
-        - run: |
+       - run: |
             su - zimbra -c "zmprov ca admin@localhost test123 zimbraIsAdminAccount TRUE"
             su - zimbra -c "zmprov ca globaladmin@localhost test123 zimbraIsAdminAccount TRUE"
             su - zimbra -c "zmprov ca admin@testdomain.com test123 zimbraIsAdminAccount TRUE"
