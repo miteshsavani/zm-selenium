@@ -4,4 +4,4 @@ jobs:
      docker:
        - image: zimbra/zcs-foss
      steps:
-       - run: cut -d: -f1 /etc/passwd
+       - run: "cut -d: -f1 /etc/passwd"
