@@ -4,4 +4,42 @@ jobs:
      docker:
        - image: zimbra/zcs-foss
      steps:
-       - run: "cut -d: -f1 /etc/passwd"
+       - run: sudo apt-get update; sudo apt-get -y install git; sudo apt-get -y install wget; sudo apt-get -y install ant;sudo apt-get -y install default-jdk
+       - checkout
+       - run: echo "hello world"
+       - run: |
+            mkdir ../.zcs-deps
+            cd ../.zcs-deps
+            wget http://www.java2s.com/Code/JarDownload/ant-contrib/ant-contrib-1.0b1.jar.zip
+            unzip -a ant-contrib-1.0b1.jar.zip
+            mkdir ../.ivy2
+            cd ../.ivy2
+            mkdir cache
+            echo download zm-ajax from github
+            git clone https://github.com/Zimbra/zm-ajax.git ../zm-ajax
+            git clone https://github.com/Zimbra/zimbra-package-stub.git ../zimbra-package-stub
+            git clone https://github.com/Zimbra/zm-mailbox.git ../zm-mailbox
+            git clone https://github.com/Zimbra/zm-zcs.git ../zm-zcs
+            git clone https://github.com/Zimbra/zm-web-client.git ../zm-web-client
+            git clone https://github.com/Zimbra/zm-zimlets.git ../zm-zimlets
+            cd ../zm-mailbox
+            ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
+            git clone https://github.com/miteshsavani/zm-selenium.git ../zm-selenium
+       - run: |
+            cd ../zm-selenium
+       - run: |
+            su - zimbra -c "zmprov cd testdomain.com"
+       - run: |
+            su - zimbra -c "zmprov ca admin@localhost test123 zimbraIsAdminAccount TRUE"
+            su - zimbra -c "zmprov ca globaladmin@localhost test123 zimbraIsAdminAccount TRUE"
+            su - zimbra -c "zmprov ca admin@testdomain.com test123 zimbraIsAdminAccount TRUE"
+            su - zimbra -c "zmgsautil createAccount -a galsync@localhost -n InternalGAL --domain localhost \-s localhost -t zimbra -f _InternalGAL" 
+            su - zimbra -c "zmgsautil createAccount -a galsync@testdomain.com -n InternalGAL --domain testdomain.com \-s localhost -t zimbra -f _InternalGAL"
+            ant Run-ExecuteHarnessMain
+            - save_cache:
+                 key: v1-myapp-cache
+                 paths:
+                        - ~/zm-ajax
+                        - ~/zm-mailbox
+                        - ~/.zcs-deps
+            
