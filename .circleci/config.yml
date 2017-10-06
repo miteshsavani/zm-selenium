@@ -28,7 +28,7 @@ jobs:
        - run: |
             cd ../zm-selenium
        - run: |
-            su - zimbra -c "zmprov cd testdomain.com"
+            sudo su - zimbra -c "zmprov cd testdomain.com"
        - run: |
             su - zimbra -c "zmprov ca admin@localhost test123 zimbraIsAdminAccount TRUE"
             su - zimbra -c "zmprov ca globaladmin@localhost test123 zimbraIsAdminAccount TRUE"
