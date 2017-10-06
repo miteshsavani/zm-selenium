@@ -5,6 +5,7 @@ jobs:
        - image: circleci/ubuntu-server
      working_directory: ~/zm-selenium
      steps:
+       - checkout
        - run: apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/* && apt-get -qq update
        - run: sudo apt-get install -y curl;
        - run: curl -s -k -o /tmp/zcs.tgz 'https://files.zimbra.com.s3.amazonaws.com/downloads/8.8.3_GA/zcs-8.8.3_GA_1872.UBUNTU14_64.20170905143325.tgz'
@@ -12,4 +13,6 @@ jobs:
        - run: cd /tmp/zcs-8.8.3_GA_1872.UBUNTU14_64.20170905143325
        - run: echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
        - run: cd /tmp/zcs-8.8.3_GA_1872.UBUNTU14_64.20170905143325 && sed -i.bak 's/checkRequired/# checkRequired/' install.sh && sudo ./install.sh -s -x --skip-upgrade-check < ~/zm-selenium/.circleci/software-install-responses
+       - run: cd /opt/zimbra/libexec && ls && sudo ./zmsetup.pl
        - run: su - zimbra -c 'zmcontrol status'
+
