@@ -3,6 +3,7 @@ jobs:
    build:
      docker:
        - image: zimbra/zcs-foss:latest
+       - image: circleci/openjdk:8-jdk-browsers
      working_directory: ~/zm-selenium
      steps:
        - run: sudo apt-get update && apt-get install -y git && apt-get install -y sudo && apt-get install -y ant
