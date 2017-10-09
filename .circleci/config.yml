@@ -5,4 +5,5 @@ jobs:
        - image: zimbra/zcs-foss:latest
      working_directory: ~/zm-selenium
      steps:
+       - checkout
        - run: cd /opt/zimbra/libexec && ls && sudo ./zmsetup.pl < ~/zm-selenium/.circleci/installsingle
