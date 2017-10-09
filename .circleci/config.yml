@@ -32,7 +32,6 @@ jobs:
             git clone https://github.com/Zimbra/zm-zimlets.git ../zm-zimlets
             cd ../zm-mailbox
             ant publish-local-all -Dzimbra.buildinfo.version=8.7.6_GA
-            git clone https://github.com/miteshsavani/zm-selenium.git ../zm-selenium
             cd ../zm-selenium
             su - zimbra -c "zmprov cd testdomain.com" 
             su - zimbra -c "zmprov ca admin@localhost test123 zimbraIsAdminAccount TRUE"
