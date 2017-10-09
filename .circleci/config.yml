@@ -4,6 +4,7 @@ jobs:
      docker:
        - image: zimbra/zcs-foss:latest
      working_directory: ~/zm-selenium
+     resource_class: large
      steps:
        - run: sudo apt-get update && apt-get install -y git && apt-get install -y sudo && apt-get install -y ant
        - run: |
