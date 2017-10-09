@@ -3,12 +3,11 @@ jobs:
    build:
      docker:
        - image: zimbra/zcs-foss:latest
-       - image: circleci/openjdk:8-jdk-browsers
      working_directory: ~/zm-selenium
      steps:
        - run: sudo apt-get update && apt-get install -y git && apt-get install -y sudo && apt-get install -y ant
        - run: |
-            sudo apt-get install openjdk-8-jdk
+            sudo apt-get -y install openjdk-8-jdk
             apt-cache search jdk
             export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
             export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bin
