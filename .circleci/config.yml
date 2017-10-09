@@ -8,7 +8,7 @@ jobs:
        - run: sudo apt-get update && apt-get install -y git && apt-get install -y sudo && apt-get install -y ant
        - checkout
        - run: cd /opt/zimbra/libexec && ls && sudo ./zmsetup.pl -c ~/zm-selenium/.circleci/installPL
-	   - run: |
+       - run: |
             mkdir ../.zcs-deps
             cd ../.zcs-deps
             wget http://www.java2s.com/Code/JarDownload/ant-contrib/ant-contrib-1.0b1.jar.zip
