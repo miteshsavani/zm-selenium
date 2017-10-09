@@ -13,6 +13,6 @@ jobs:
        - run: cd /tmp/zcs-8.8.3_GA_1872.UBUNTU14_64.20170905143325
        - run: echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
        - run: cd /tmp/zcs-8.8.3_GA_1872.UBUNTU14_64.20170905143325 && sed -i.bak 's/checkRequired/# checkRequired/' install.sh && sudo bash -x install.sh -s -x --skip-upgrade-check  ~/zm-selenium/.circleci/installsingle
-       - run: cd /opt/zimbra/libexec && ls && sudo ./zmsetup.pl ~/zm-selenium/.circleci/installsingle
+       - run: cd /opt/zimbra/libexec && ls && sudo ./zmsetup.pl < ~/zm-selenium/.circleci/input
        - run: su - zimbra -c 'zmcontrol status'
 
