@@ -7,6 +7,12 @@ jobs:
      working_directory: ~/zm-selenium
      steps:
        - run: sudo apt-get update && apt-get install -y git && apt-get install -y sudo && apt-get install -y ant
+       - run: |
+            sudo apt-get install openjdk-8-jdk
+            apt-cache search jdk
+            export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+            export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bin
+            javac -version
        - checkout
        - run: cd /opt/zimbra/libexec && ls && sudo ./zmsetup.pl -c ~/zm-selenium/.circleci/installPL
        - run: |
