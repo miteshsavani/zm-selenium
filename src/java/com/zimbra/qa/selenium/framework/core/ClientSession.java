@@ -221,13 +221,13 @@ public class ClientSession {
 				options.addArguments("disable-infobars");
 				options.addArguments("start-maximized");
 
-		        /*DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		        System.setProperty("webdriver.chrome.driver", driverFile);
 		        capabilities.setCapability("chrome.switches", Arrays.asList("--disable-extensions"));
 		        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		        capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
-		        webDriver = new ChromeDriver(capabilities);*/
-			 	String USERNAME = "miteshsavani1";
+		        webDriver = new ChromeDriver(capabilities);
+			/* 	String USERNAME = "miteshsavani1";
 			     String AUTOMATE_KEY = "Jp3Wo9CMsi6koFeQ3pfP";
 			     String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
@@ -244,7 +244,7 @@ public class ClientSession {
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				}*/
 			}
 		}
 		return webDriver;
